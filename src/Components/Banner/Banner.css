@@ -1,0 +1,24 @@
+header.banner{
+    background: url("./space3.jpg") no-repeat center center/cover;
+    width: 100%;
+    height: 90vh;
+    padding-top: 9rem;
+    /* padding-left: 15rem; */
+}
+
+#image{
+    animation: rock 3s ease-in-out infinite normal none;
+}
+
+@keyframes rock {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
