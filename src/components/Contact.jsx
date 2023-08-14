@@ -66,6 +66,7 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your name</span>
             <input
