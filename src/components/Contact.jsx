@@ -22,20 +22,25 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...form }),
     })
-      .then(() => setLoading(false))
-      .catch((error) =>
+      .then(() => {
+        alert(
+          'Thanks for your message, I will reach out to you as soon as possible.'
+        );
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
         alert(
           'There was an error sending your message. Please use any of my social links to reach out. Thanks'
-        )
-      );
-
-    e.preventDefault();
+        );
+      });
   };
 
   return (
