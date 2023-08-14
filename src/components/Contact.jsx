@@ -38,10 +38,10 @@ const Contact = () => {
       body: encode({ 'form-name': 'contact', ...form }),
     })
       .then(() => {
+        setLoading(false);
         alert(
           'Thanks for your message, I will reach out to you as soon as possible.'
         );
-        setLoading(false);
       })
       .catch((error) => {
         setLoading(false);
@@ -66,7 +66,6 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
-          <input type="hidden" name="form-name" value="contact" />
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your name</span>
             <input
